@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Footer from '../components/Footer';
+import heroImage from '../images/hero-image.png';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -17,7 +18,8 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className="hero-image" style={{ marginBottom: 0 }}>
+      <div className="hero-image_container" style={{ marginBottom: 0 }}>
+        <img className="hero-image" src={heroImage} alt="vinyls" />
         <div className="hero-btn">
           <Button
             variant="contained"
