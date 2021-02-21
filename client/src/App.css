@@ -24,6 +24,11 @@ body {
   }
 }
 
+.navbar-title {
+  font-family: Shrikhand;
+  color: black;
+}
+
 .hero-image_container {
   width: 100vw;
   height: 600px;

@@ -62,8 +62,8 @@ export default function Navbar(props) {
           style={{ backgroundColor: '#fff', color: '#000' }}
         >
           <Toolbar>
-            <Link to="/">
-              <h2>Turntable Gigs</h2>
+            <Link to="/" style={{ textDecoration: 'none' }}>
+              <h2 className="navbar-title">Turntable Gigs</h2>
             </Link>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
