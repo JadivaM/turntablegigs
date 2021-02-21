@@ -78,6 +78,11 @@ export default function Navbar(props) {
                 inputProps={{ 'aria-label': 'search' }}
               />
             </div>
+            <div className="navbar-items">
+              <p>Home</p>
+              <p>Find Gigs</p>
+              <p>Find DJs</p>
+            </div>
             <LoginDialog />
             <SignupDialog />
           </Toolbar>
