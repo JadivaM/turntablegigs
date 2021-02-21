@@ -2,8 +2,9 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Libre Baskerville', serif;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
 .logo {
   height: 30px;
@@ -22,20 +23,39 @@ body {
     transform: rotate(359deg);
   }
 }
-.hero-image {
-  /* background-image: url('./hero-image.png');
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat; */
+
+.hero-image_container {
   width: 100vw;
   height: 600px;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.hero-image {
+  width: 100vw;
+  height: 600px;
+  position: absolute;
 }
 
-.hero-btn {
-  margin-top: 650px;
-  margin-left: 540px;
+.hero-image-text {
+  font-family: Shrikhand;
+  text-shadow: 2px 2px #18171793;
+  font-size: 40px;
+  font-family: Shrikhand;
+  color: rgb(250, 241, 241);
+}
+
+.hero-image-details {
+  position: relative;
+}
+
+.hero-image-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image-btn {
+  margin-left: 10px;
 }
 
 .featGigs,
