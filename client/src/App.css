@@ -33,6 +33,7 @@ body {
 .navbar-items-container {
   display: flex;
   position: absolute;
+  height: 40px;
   right: 0;
 }
 

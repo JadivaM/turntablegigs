@@ -85,7 +85,6 @@ export default function Navbar(props) {
                 <InputBase
                   placeholder="Search and discover"
                   classes={{
-                    root: classes.inputRoot,
                     input: classes.inputInput
                   }}
                   inputProps={{ 'aria-label': 'search' }}
