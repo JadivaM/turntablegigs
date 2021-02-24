@@ -43,9 +43,7 @@ export default function SignupDialog({ history }) {
 
   return (
     <div>
-      <Button variant="outlined" color="default" onClick={handleClickOpen}>
-        Signup
-      </Button>
+      <p onClick={handleClickOpen}>Signup</p>
 
       <Dialog
         open={open}
