@@ -47,9 +47,9 @@ export default function LoginDialog({ history }) {
 
   return (
     <div>
-      <Button variant="outlined" color="default" onClick={handleClickOpen}>
+      <p className="navbar-login" onClick={handleClickOpen}>
         Login
-      </Button>
+      </p>
 
       <Dialog
         open={open}
