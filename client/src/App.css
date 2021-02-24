@@ -30,6 +30,12 @@ body {
   color: black;
 }
 
+.navbar-items-container {
+  display: flex;
+  position: absolute;
+  right: 0;
+}
+
 .navbar-items {
   display: flex;
   width: 300px;
@@ -47,6 +53,15 @@ body {
   width: 100vw;
   height: 600px;
   position: absolute;
+  background-image: linear-gradient(0deg, #00000088 30%, #ffffff44 100%);
+}
+
+.hero-image::after {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0,
+    #fff 100%
+  );
 }
 
 .hero-image-text {

@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import { Link } from 'react-router-dom';
+import Divider from '@material-ui/core/Divider';
 
 import LoginDialog from '../logged-out/LogInDialog';
 import SignupDialog from '../logged-out/SignupDialog';
@@ -65,26 +66,32 @@ export default function Navbar(props) {
             <Link to="/" style={{ textDecoration: 'none' }}>
               <h2 className="navbar-title">Turntable Gigs</h2>
             </Link>
-            <div className={classes.search}>
-              <div className={classes.searchIcon}>
-                <SearchIcon />
+            <div className="navbar-items-container">
+              <div className="navbar-items">
+                <p>Find Gigs</p>
+                <p>Find DJs</p>
+                <Divider
+                  orientation="vertical"
+                  flexItem
+                  style={{ height: 20, marginTop: 15 }}
+                />
+                <LoginDialog />
+                <SignupDialog />
               </div>
-              <InputBase
-                placeholder="Search and discover"
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput
-                }}
-                inputProps={{ 'aria-label': 'search' }}
-              />
+              <div className={classes.search}>
+                <div className={classes.searchIcon}>
+                  <SearchIcon />
+                </div>
+                <InputBase
+                  placeholder="Search and discover"
+                  classes={{
+                    root: classes.inputRoot,
+                    input: classes.inputInput
+                  }}
+                  inputProps={{ 'aria-label': 'search' }}
+                />
+              </div>
             </div>
-            <div className="navbar-items">
-              <p>Home</p>
-              <p>Find Gigs</p>
-              <p>Find DJs</p>
-            </div>
-            <LoginDialog />
-            <SignupDialog />
           </Toolbar>
         </AppBar>
       </div>
