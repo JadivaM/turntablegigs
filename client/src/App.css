@@ -7,40 +7,36 @@ body {
 
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
-.logo {
-  height: 30px;
-  width: 30px;
-  margin-left: 75px;
+.navbar-container {
+  height: 10%;
+  display: flex;
+  background-color: transparent;
 }
-.logo:hover {
-  animation: rotation 3s infinite linear;
-  cursor: pointer;
-}
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
+
+.navbar-title-container {
+  padding-left: 3%;
 }
 
 .navbar-title {
-  font-family: Shrikhand;
   color: black;
+  font-family: Shrikhand;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-.navbar-items-container {
-  display: flex;
-  position: absolute;
-  height: 40px;
-  right: 0;
-}
-
-.navbar-items {
+.navbar-list {
   display: flex;
   width: 300px;
-  justify-content: space-evenly;
+  position: absolute;
+  right: 0;
+  align-items: baseline;
+  justify-content: space-around;
+  list-style-type: none;
+  padding-right: 3%;
+}
+.navbar-list li:visited {
+  text-decoration: none;
+  color: black;
 }
 
 .hero-image_container {
@@ -169,6 +165,7 @@ body {
   transition: 0.5s;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 #goLeft {
