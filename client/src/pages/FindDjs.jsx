@@ -16,34 +16,24 @@ const FindDjs = () => {
           <h1 className="main-container-dj__text__title">
             Who's On the One's and Two's?
           </h1>
+          <div className="searchbar-container">
+            <DjSearchBar />
+          </div>
         </div>
       </div>
 
-      <div className="exploreDjs">
-        <h2 className="explore-title">Explore</h2>
-        <p className="filterBy">Filter by: </p>
-        <LocationOnIcon
-          fontSize="small"
-          id="explore-icon"
-          className="filterBy"
-        />
-        <p className="filterBy">Location</p>
-        <MusicNoteIcon
-          fontSize="small"
-          id="explore-icon"
-          className="filterBy"
-        />
-        <p className="filterBy">Genre</p>
-        <AlbumIcon fontSize="small" id="explore-icon" className="filterBy" />
-        <p className="filterBy">Equipment</p>
-      </div>
-      <div>
-        <DjSearchBar />
-        <div className="dj-card">
-          <FindDjsCard />
+      <section className="explore-djs-main-container">
+        <div className="exploreDjs">
+          <h2 className="explore-title">Explore</h2>
         </div>
-        <FeatDjs />
-      </div>
+
+        <div className="dj-card-container">
+          <div className="dj-card">
+            <FindDjsCard />
+          </div>
+        </div>
+      </section>
+      <FeatDjs />
       <Footer />
     </>
   );

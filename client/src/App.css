@@ -80,13 +80,13 @@ body {
 }
 
 #dj-search-input {
-  height: 30px;
-  width: 500px;
+  height: 45px;
+  width: 650px;
   border: 0;
-  background: rgba(221, 220, 220, 0.616);
+  background: rgb(238, 235, 235);
   padding: 3px 15px;
   border: 1px solid rgb(141, 141, 141);
-  border-radius: 50px;
+  border-radius: 10px;
   outline: none;
 }
 
@@ -356,11 +356,21 @@ body {
   display: flex;
 }
 
+.dj-card-container {
+  display: flex;
+  justify-content: center;
+  width: 90vw;
+  border: red 1px solid;
+}
+
 .findDjs-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  border: blue 1px solid;
+  width: 100%;
   margin-top: 20px;
+  margin: 0;
 }
 
 .venue-avatar {
