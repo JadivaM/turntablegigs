@@ -11,7 +11,13 @@ const FindDjs = () => {
   return (
     <>
       <Navbar />
-      <div className="djs-hero-image"></div>
+      <div className="djs-hero-image">
+        <div className="main-container-dj__text">
+          <h1 className="main-container-dj__text__title">
+            Who's On the One's and Two's?
+          </h1>
+        </div>
+      </div>
 
       <div className="exploreDjs">
         <h2 className="explore-title">Explore</h2>

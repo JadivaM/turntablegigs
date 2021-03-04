@@ -58,12 +58,10 @@ body {
 
 .djs-hero-image {
   background-image: url('./djsheroimage.png');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
-  width: 1000px;
+  width: 100vw;
   height: 700px;
-  box-sizing: border-box;
-  margin: auto;
 }
 
 .gigs-hero-image {
@@ -441,7 +439,8 @@ body {
   position: relative;
 }
 
-.main-container-home__text__title {
+.main-container-home__text__title,
+.main-container-dj__text__title {
   font-family: Shrikhand;
   text-shadow: 2px 2px #030303;
   font-size: 3.5rem;
@@ -455,11 +454,19 @@ body {
   margin-top: 0;
 }
 
-.main-container-home__text {
+.main-container-home__text,
+.main-container-dj__text {
   position: absolute;
-  bottom: 350px;
   color: white;
   padding-left: 3%;
+}
+
+.main-container-home__text {
+  bottom: 350px;
+}
+
+.main-container-dj__text {
+  bottom: 400px;
 }
 
 .main-container-home-hero__image {
@@ -469,7 +476,8 @@ body {
 }
 
 .main-container-home__text__title,
-.main-container-home__text__caption {
+.main-container-home__text__caption,
+.main-container-dj__text__title {
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
