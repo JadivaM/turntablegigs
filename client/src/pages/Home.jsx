@@ -23,9 +23,9 @@ const Home = () => {
             Connecting DJs and Venues
           </h1>
 
-          <p className="main-container-home__text__caption">
-            Discover available gigs and support local DJs in your area
-          </p>
+          <h3 className="main-container-home__text__caption">
+            Discover gigs and support local DJs in your area
+          </h3>
         </div>
       </div>
       <Footer />

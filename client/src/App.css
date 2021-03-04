@@ -449,14 +449,15 @@ body {
 }
 
 .main-container-home__text__caption {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   padding-left: 1%;
+  text-shadow: 0.5px 0.5px #3a3a3a83;
   margin-top: 0;
 }
 
 .main-container-home__text {
   position: absolute;
-  bottom: 250px;
+  bottom: 350px;
   color: white;
   padding-left: 3%;
 }
@@ -465,4 +466,20 @@ body {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+.main-container-home__text__title,
+.main-container-home__text__caption {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
