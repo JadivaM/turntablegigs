@@ -14,7 +14,7 @@ const FindDjs = () => {
       <div className="djs-hero-image">
         <div className="main-container-dj__text">
           <h1 className="main-container-dj__text__title">
-            Who's On the One's and Two's?
+            Who's On the Ones and Twos?
           </h1>
           <div className="searchbar-container">
             <DjSearchBar />
