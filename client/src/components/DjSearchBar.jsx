@@ -18,7 +18,7 @@ const DjSearchBar = ({ setSearchResults }) => {
             id="dj-search-input"
             type="text"
             label="search"
-            // placeholder="Search for local DJs"
+            placeholder="Search by location, name, or genre"
           />
         </form>
       </div>
