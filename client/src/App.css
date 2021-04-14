@@ -88,19 +88,20 @@ body {
 }
 
 #dj-search-input {
-  height: 2.2rem;
+  height: 2.5rem;
   width: 30rem;
   border: 0;
   background: rgb(238, 235, 235);
-  padding: 3px 35px;
+  padding: 0.2% 1% 0.2% 5%;
   border: 1px solid rgb(141, 141, 141);
   border-radius: 10px;
   outline: none;
+  font-size: 16px;
 }
 
 .dj-searchbar-search-icon {
   position: absolute;
-  left: 1%;
+  left: 1.3%;
   top: 20%;
   color: #252525;
 }
