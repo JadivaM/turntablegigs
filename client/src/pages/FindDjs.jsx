@@ -23,9 +23,8 @@ const FindDjs = () => {
 
       <section className="explore-djs-main-container">
         <div className="exploreDjs">
-          <h2 className="explore-title">Explore</h2>
+          <h4>Discover up and coming DJs from all genres</h4>
         </div>
-
         <div className="dj-card-container">
           <div className="dj-card">
             <FindDjsCard />
