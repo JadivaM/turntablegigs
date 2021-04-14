@@ -113,10 +113,32 @@ body {
   text-align: center;
 }
 
-.filterBy {
-  color: rgb(116, 113, 113);
-  padding: 5px;
-  margin-top: 22px;
+.dj-individual-card {
+  width: 15%;
+  height: 5%;
+  margin: 1.5%;
+}
+
+.dj-card-information {
+  margin-block-start: 0;
+}
+
+.dj-card-location {
+  color: rgb(112, 111, 111);
+}
+
+.MuiCardContent-root {
+  padding: 0;
+}
+
+.dj-card-name:hover {
+  text-decoration: underline;
+}
+
+.dj-card-image {
+  width: 200px;
+  height: 125px;
+  object-fit: contain;
 }
 
 .explore-title {
@@ -243,6 +265,7 @@ body {
 }
 .dj-card {
   width: 80vw;
+  height: auto;
 }
 .pagination {
   display: flex;
@@ -379,7 +402,6 @@ body {
 .findDjs-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
   width: 100%;
 }
 
@@ -441,10 +463,10 @@ body {
 .radio-prompt {
   margin-right: 8px;
 }
-
+/* 
 .dj-card-link {
   margin-left: 100px;
-}
+} */
 
 .main-container-home {
   background-image: linear-gradient(
