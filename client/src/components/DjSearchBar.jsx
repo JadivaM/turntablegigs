@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import SearchIcon from '@material-ui/icons/Search';
 
 const DjSearchBar = ({ setSearchResults }) => {
   const history = useHistory();
@@ -11,12 +12,13 @@ const DjSearchBar = ({ setSearchResults }) => {
     <div className="containerSearch">
       <div className="dj-searchbar">
         <form onSubmit={handleSubmit}>
+          <SearchIcon className="dj-searchbar-search-icon" />
           <input
             onChange={(e) => setSearch(e.target.value)}
             id="dj-search-input"
             type="text"
             label="search"
-            placeholder="Search for local DJs"
+            // placeholder="Search for local DJs"
           />
         </form>
       </div>
