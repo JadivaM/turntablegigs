@@ -1,25 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
 
-const useStyles = makeStyles({
-  root: {
-    width: 300,
-    marginTop: 30
-  },
-  img: {
-    height: 250
-  }
-});
-
-export default function FindDjsCard({ dj }) {
-  const classes = useStyles();
+export default function FindDjsCard() {
   const [djs, setDjs] = useState([]);
 
   useEffect(() => {
@@ -40,43 +26,27 @@ export default function FindDjsCard({ dj }) {
     <div className="findDjs-cards">
       {djs.map((dj) => {
         return (
-          <Card key={dj.id} className={classes.root}>
+          <Card key={dj.id} className="dj-individual-card">
             <CardActionArea>
               <CardMedia
-                className={classes.img}
-                square
+                className="dj-card-image"
                 component="img"
                 alt="DJ avatar"
                 image={dj.avatar}
                 title="DJs performing"
               ></CardMedia>
               <CardContent style={{ textAlign: 'center' }}>
-                <Typography
-                  style={{ marginBottom: 0 }}
-                  gutterBottom
-                  variant="h5"
-                  component="h2"
-                >
-                  {dj.name}
-                </Typography>
-                <Typography
-                  variant="caption"
-                  color="textSecondary"
-                  component="p"
-                >
-                  {dj.location}
-                </Typography>
+                <div className="dj-card-information">
+                  <Link
+                    to={`/profile/${dj._id}`}
+                    style={{ color: 'black', textDecoration: 'none' }}
+                  >
+                    <h4 className="dj-card-name">{dj.name}</h4>
+                  </Link>
+                  <p className="dj-card-location">{dj.location}</p>
+                </div>
               </CardContent>
             </CardActionArea>
-            <CardActions>
-              <Typography variant="body1" component="p">
-                <div className="dj-card-link">
-                  <Link to={`/profile/${dj._id}`} style={{ color: 'black' }}>
-                    view profile{' '}
-                  </Link>
-                </div>
-              </Typography>
-            </CardActions>
           </Card>
         );
       })}
