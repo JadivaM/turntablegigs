@@ -9,6 +9,9 @@ const profileSchema = new Schema({
   socialMedia: {
     type: String
   },
+  music: {
+    type: String
+  },
   experience: {
     type: String
   },
