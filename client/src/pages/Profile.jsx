@@ -141,7 +141,14 @@ const Profile = () => {
               </div>
             </div>
             <div className="profile-music-row">
-              {!profile?.user?.dj ? <VenueMaps /> : <DjMusicPlayer />}
+              {!profile?.user?.dj ? (
+                <VenueMaps />
+              ) : (
+                <DjMusicPlayer
+                  key={profile.profile.id}
+                  music={profile.profile.music}
+                />
+              )}
               {currentUser?._id === id && (
                 <div className="edit-icon">
                   <IconButton aria-label="edit">
