@@ -28,24 +28,24 @@ const dbReset = async () => {
   const profileIdArray = [];
 
   for (let i = 0; i < djs.length; i++) {
+    console.log(djs[i]);
     const newDj = await new User({
       name: djs[i].name,
       location: djs[i].location,
       email: djs[i].email,
       avatar: djs[i].avatar,
       password: 'superSecret',
-      dj: djs[i].dj,
-      music: djs[i].music
+      dj: djs[i].dj
     });
     await newDj.generateAuthToken();
     djIdArray.push(newDj._id);
   }
   for (let i = 0; i < djIdArray.length; i++) {
-    console.log(djIdArray[i]);
     const newProfile = new Profile({
       about: faker.lorem.paragraph(),
       owner: djIdArray[i],
-      experience: faker.lorem.paragraph()
+      experience: faker.lorem.paragraph(),
+      music: djs[i].music
     });
     await newProfile.save();
   }
