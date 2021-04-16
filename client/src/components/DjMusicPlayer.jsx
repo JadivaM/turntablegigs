@@ -3,7 +3,7 @@ import '../App.css';
 
 import loadscript from 'load-script';
 
-function DjMusicPlayer() {
+function DjMusicPlayer(props) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [playlistIndex, setPlaylistIndex] = useState(0);
   const [player, setPlayer] = useState(false);
@@ -85,9 +85,7 @@ function DjMusicPlayer() {
             style={{ border: 'none', height: 314, width: 400 }}
             scrolling="no"
             allow="autoplay"
-            src={
-              'https://w.soundcloud.com/player/?url=https://soundcloud.com/druiidmusic/sets/druiid-2020'
-            }
+            src={`https://w.soundcloud.com/player/?url=${props.music}`}
           ></iframe>
         </div>
       </div>
