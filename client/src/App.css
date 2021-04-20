@@ -273,29 +273,26 @@ body {
 }
 
 .profile-cover-img {
-  margin: auto;
-  width: 80%;
-  height: 300px;
-  box-sizing: border-box;
   position: relative;
 }
 
 .cover-img {
-  box-sizing: inherit;
+  display: flex;
+  justify-content: center;
   margin: auto;
-  width: 100%;
-  height: 300px;
+  width: 70vw;
+  height: 30vh;
   z-index: -5;
   object-fit: cover;
 }
 
 .book-me-button {
-  bottom: 0 !important;
-  right: 0 !important;
-  position: absolute !important;
-  padding: 15px !important;
-  z-index: 1 !important;
-  display: flex !important;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  padding: 15px;
+  z-index: 1;
+  display: flex;
 }
 
 .user-avatar {
@@ -331,25 +328,26 @@ body {
 }
 
 .profile-block {
-  padding-top: 30px;
-  width: 80%;
-  height: 800px;
-  background-color: rgba(236, 229, 219, 0.39);
-  box-sizing: border-box;
+  width: 70vw;
   margin: auto;
 }
+
+.profile-page-container {
+  background-color: rgba(236, 229, 219, 0.233);
+}
+
 .profile-block-row {
   width: 100%;
   display: flex;
 }
 .profile-info-column {
   width: 30%;
-  border-radius: 10%;
-  background-color: white;
-  border: rgba(144, 143, 137, 0.37) 1px solid;
-  padding: 30px;
+  border-radius: 10%/10%;
+  background-color: #fff;
+  border: rgba(168, 168, 166, 0.192) 1px solid;
+  padding: 2%;
   position: relative;
-  margin-top: 30px;
+  margin-top: 3%;
 }
 
 .edit-icon {
