@@ -19,6 +19,7 @@ import Reviews from '../components/Reviews';
 import VenueMaps from '../components/VenueMaps';
 // import Chat from '../components/Chat';
 import UserInfoCard from '../components/Profile/UserInfoCard';
+import AboutSectionCard from '../components/Profile/AboutSectionCard';
 
 const useStyles = makeStyles((theme) => ({
   input: {
@@ -171,7 +172,8 @@ const Profile = () => {
             </div>
             <div className="profile-about-column">
               <div className="profile-about-row">
-                <h4>About</h4>
+                <AboutSectionCard />
+                {/* <h4>About</h4>
                 <p>{profile?.profile?.about}</p>
                 <Divider variant="middle" />
                 <div className="profile-experience-row">
@@ -188,7 +190,7 @@ const Profile = () => {
                       </div>
                     )}
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
