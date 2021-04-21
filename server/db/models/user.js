@@ -113,6 +113,12 @@ userSchema.virtual('profiles', {
   foreignField: 'owner'
 });
 
+userSchema.virtual('music', {
+  ref: 'Music',
+  localField: '_id',
+  foreignField: 'owner'
+});
+
 userSchema.virtual('gigApplications', {
   ref: 'GigApplication',
   localField: '_id',
@@ -152,6 +158,14 @@ userSchema.pre('remove', async function (next) {
 userSchema.pre('remove', async function (next) {
   const user = this;
   await GigApplication.deleteMany({
+    owner: user._id
+  });
+  next();
+});
+
+userSchema.pre('remove', async function (next) {
+  const user = this;
+  await Music.deleteMany({
     owner: user._id
   });
   next();

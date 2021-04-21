@@ -18,6 +18,10 @@ const musicSchema = new Schema({
   photo: {
     type: String,
     required: true
+  },
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
   }
 });
 
