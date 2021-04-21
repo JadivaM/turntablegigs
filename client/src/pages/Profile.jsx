@@ -1,15 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-import BookingDialog from '../components/BookingDialog';
+// import BookingDialog from '../components/BookingDialog';
 import { makeStyles } from '@material-ui/core/styles';
 import { AppContext } from '../context/AppContext';
 import AvatarDefault from '../default_avatar.png';
 import Divider from '@material-ui/core/Divider';
 import Footer from '../components/Footer';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
+// import InstagramIcon from '@material-ui/icons/Instagram';
+// import FacebookIcon from '@material-ui/icons/Facebook';
+// import TwitterIcon from '@material-ui/icons/Twitter';
 import IconButton from '@material-ui/core/IconButton';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import EditIcon from '@material-ui/icons/Edit';
@@ -17,7 +17,8 @@ import DjMusicPlayer from '../components/DjMusicPlayer';
 import Commendations from '../components/Commendations';
 import Reviews from '../components/Reviews';
 import VenueMaps from '../components/VenueMaps';
-import Chat from '../components/Chat';
+// import Chat from '../components/Chat';
+import UserInfoCard from '../components/Profile/UserInfoCard';
 
 const useStyles = makeStyles((theme) => ({
   input: {
@@ -81,7 +82,7 @@ const Profile = () => {
               </label>
             </div>
           )}
-          <div className="user-profile-avatar">
+          {/* <div className="user-profile-avatar">
             <img
               className="user-avatar"
               src={preview || profile?.user?.avatar || AvatarDefault}
@@ -106,23 +107,29 @@ const Profile = () => {
                 </label>
               </div>
             )}
-          </div>
-          <div className="book-me-button">
+          </div> */}
+          {/* <div className="book-me-button">
             {!profile?.user?.dj ? <Chat /> : <BookingDialog />}
-          </div>
+          </div> */}
         </div>
         <div className="profile-block">
           <div className="profile-block-row">
             <div className="profile-info-column">
               <div className="user-info-row" style={{ textAlign: 'center' }}>
-                <h3>{profile?.user?.name}</h3>
-                <p>{profile?.user?.location}</p>
-                <Divider variant="middle" />
+                <UserInfoCard
+                  avatar={profile?.user?.avatar}
+                  key={profile?.user?.id}
+                  name={profile?.user?.name}
+                  location={profile?.user?.location}
+                />
+                {/* <h3>{profile?.user?.name}</h3> */}
+                {/* <p>{profile?.user?.location}</p> */}
+                {/* <Divider variant="middle" />
                 <div
                   className="user-social-row"
                   style={{ textAlign: 'center' }}
-                >
-                  <h4>Connect</h4>
+                > */}
+                {/* <h4>Connect</h4>
                   <IconButton
                     aria-label="instagram profile"
                     style={{ color: '#c34893' }}
@@ -142,7 +149,7 @@ const Profile = () => {
                     <TwitterIcon />
                   </IconButton>
                   <Divider variant="middle" />
-                </div>
+                </div> */}
               </div>
               <div className="profile-music-row">
                 {!profile?.user?.dj ? (
