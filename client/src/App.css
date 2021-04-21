@@ -339,6 +339,10 @@ body {
   margin: auto;
 }
 
+.user-profile-info-card {
+  margin-top: 10%;
+}
+
 .user-social-row {
   display: flex;
   justify-content: center;
