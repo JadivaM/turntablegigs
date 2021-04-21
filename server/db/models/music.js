@@ -15,6 +15,10 @@ const musicSchema = new Schema({
     type: String,
     trim: true
   },
+  genre: {
+    type: String,
+    trim: true
+  },
   photo: {
     type: String,
     required: true
