@@ -129,6 +129,7 @@ body {
 
 .MuiCardContent-root {
   padding: 0;
+  margin: 0;
 }
 
 .dj-card-name:hover {
@@ -286,14 +287,14 @@ body {
   object-fit: cover;
 }
 
-.book-me-button {
+/* .book-me-button {
   bottom: 0;
   right: 0;
   position: absolute;
   padding: 15px;
   z-index: 1;
   display: flex;
-}
+} */
 
 /* .user-avatar {
   border: rgba(144, 143, 137, 0.37) 1px solid;
@@ -348,6 +349,20 @@ body {
   justify-content: center;
   margin-block-start: 0;
   margin: auto;
+}
+
+.user-profile-book-me {
+  width: 95%;
+  height: auto;
+  padding: 3%;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: rgb(1, 61, 82);
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 800;
+  margin: 1%;
 }
 
 .profile-page-container {
