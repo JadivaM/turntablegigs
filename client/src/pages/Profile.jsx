@@ -172,7 +172,10 @@ const Profile = () => {
             </div>
             <div className="profile-about-column">
               <div className="profile-about-row">
-                <AboutSectionCard />
+                <AboutSectionCard
+                  key={profile?.user?.id}
+                  about={profile?.profile?.about}
+                />
                 {/* <h4>About</h4>
                 <p>{profile?.profile?.about}</p>
                 <Divider variant="middle" />
