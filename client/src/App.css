@@ -374,15 +374,10 @@ body {
   display: flex;
   margin-top: 3%;
 }
-/* .profile-info-column {
-  width: 30%;
-  border-radius: 10%/10%;
-  background-color: #fff;
-  border: rgba(168, 168, 166, 0.192) 1px solid;
-  padding: 2%;
-  position: relative;
-  margin-top: 3%;
-} */
+
+.profile-info-column {
+  margin: 0 3% 0 0;
+}
 
 .edit-icon {
   position: absolute;
@@ -393,13 +388,7 @@ body {
 
 .profile-about-column {
   width: 100%;
-  /* margin-left: 100px; */
-  /* border-radius: 5%/10%; */
-  /* padding: 20px; */
-  /* background-color: white; */
-  /* border: rgba(144, 143, 137, 0.37) 1px solid; */
   position: relative;
-  /* margin-top: 3%; */
 }
 
 /* .user-profile-about-card {
