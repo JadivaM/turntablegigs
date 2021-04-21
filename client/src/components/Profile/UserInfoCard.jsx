@@ -16,11 +16,11 @@ const UserInfoCard = (props) => {
         <CardActionArea>
           <CardMedia image={props.avatar} title={props.name} />
           <CardContent>
-            <h4>{props.name}</h4>
+            <h4 className="user-profile-card-name">{props.name}</h4>
             <p className="user-profile-card-location">{props.location}</p>
           </CardContent>
         </CardActionArea>
-        <div className="user-social-row">
+        {/* <div className="user-social-row">
           <IconButton aria-label="instagram profile">
             <InstagramIcon fontSize="small" />
           </IconButton>
@@ -30,6 +30,10 @@ const UserInfoCard = (props) => {
           <IconButton aria-label="twitter profile">
             <TwitterIcon fontSize="small" />
           </IconButton>
+        </div> */}
+        <div>
+          <button className="user-profile-book-me">Book me</button>
+          <button className="user-profile-book-me">Contact</button>
         </div>
       </Card>
     </div>

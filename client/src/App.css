@@ -129,6 +129,7 @@ body {
 
 .MuiCardContent-root {
   padding: 0;
+  margin: 0;
 }
 
 .dj-card-name:hover {
@@ -286,14 +287,14 @@ body {
   object-fit: cover;
 }
 
-.book-me-button {
+/* .book-me-button {
   bottom: 0;
   right: 0;
   position: absolute;
   padding: 15px;
   z-index: 1;
   display: flex;
-}
+} */
 
 /* .user-avatar {
   border: rgba(144, 143, 137, 0.37) 1px solid;
@@ -339,15 +340,29 @@ body {
   margin: auto;
 }
 
-.user-profile-info-card {
+/* .user-profile-info-card {
   margin-top: 10%;
-}
+} */
 
 .user-social-row {
   display: flex;
   justify-content: center;
   margin-block-start: 0;
   margin: auto;
+}
+
+.user-profile-book-me {
+  width: 95%;
+  height: auto;
+  padding: 3%;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: rgb(1, 61, 82);
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 800;
+  margin: 1%;
 }
 
 .profile-page-container {
@@ -357,16 +372,12 @@ body {
 .profile-block-row {
   width: 100%;
   display: flex;
-}
-/* .profile-info-column {
-  width: 30%;
-  border-radius: 10%/10%;
-  background-color: #fff;
-  border: rgba(168, 168, 166, 0.192) 1px solid;
-  padding: 2%;
-  position: relative;
   margin-top: 3%;
-} */
+}
+
+.profile-info-column {
+  margin: 0 3% 0 0;
+}
 
 .edit-icon {
   position: absolute;
@@ -377,21 +388,19 @@ body {
 
 .profile-about-column {
   width: 100%;
-  margin-left: 100px;
-  border-radius: 5%/10%;
-  padding: 20px;
-  background-color: white;
-  border: rgba(144, 143, 137, 0.37) 1px solid;
   position: relative;
-  margin-top: 30px;
 }
 
-.commendations {
+/* .user-profile-about-card {
+  margin-top: 5%;
+} */
+
+/* .commendations {
   text-align: center;
   font-style: oblique;
   font-weight: 500;
   margin-top: 50px;
-}
+} */
 
 .open-gigs-column {
   width: 100%;
