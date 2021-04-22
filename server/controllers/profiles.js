@@ -18,8 +18,6 @@ exports.createProfile = async (req, res) => {
 exports.getSpecificProfile = async (req, res) => {
   const _id = req.params.id;
   console.log(_id);
-
-  // console.log(req.user.name)
   if (!mongoose.Types.ObjectId.isValid(_id))
     return res.status(400).send('Not a valid user profile');
 
