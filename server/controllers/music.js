@@ -1,5 +1,6 @@
 const mongoose = require('mongoose'),
   Music = require('../db/models/music'),
+  cloudinary = require('cloudinary').v2,
   User = require('../db/models/user');
 
 exports.createMusic = async (req, res) => {
@@ -23,8 +24,8 @@ exports.getSpecificMusic = async (req, res) => {
     return res.status(400).send('Not a valid song');
 
   try {
-    const user = await Music.findOne({ _id: req.params.id });
-    console.log(Music);
+    const user = await User.findOne({ _id: req.params.id });
+    console.log(user);
     const Music = await Music.findOne({ owner: user._id });
     console.log('******', music);
     if (!music) return res.status(404).send('Not found');
@@ -77,5 +78,18 @@ exports.deleteMusic = async (req, res) => {
     res.json({ message: 'Music has been deleted' });
   } catch (e) {
     res.status(500).json({ error: e.toString() });
+  }
+};
+
+exports.uploadCoverPhoto = async (req, res) => {
+  try {
+    const response = await cloudinary.uploader.upload(
+      req.files.coverPhoto.tempFilePath
+    );
+    req.music.coverPhoto = response.secure_url;
+    await req.music.save();
+    res.json(response);
+  } catch (e) {
+    res.json({ error: e.toString() });
   }
 };
