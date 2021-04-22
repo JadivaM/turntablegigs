@@ -19,7 +19,7 @@ const musicSchema = new Schema({
     type: String,
     trim: true
   },
-  photo: {
+  coverPhoto: {
     type: String,
     required: true
   },
