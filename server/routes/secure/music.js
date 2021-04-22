@@ -4,7 +4,7 @@ const router = require('express').Router(),
     updateMusic,
     deleteMusic,
     uploadCoverPhoto
-  } = require('../../controllers/profiles');
+  } = require('../../controllers/music');
 
 router.post('/:id', createMusic);
 router.patch('/update', updateMusic);
