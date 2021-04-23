@@ -80,12 +80,12 @@ exports.deleteProfile = async (req, res) => {
   }
 };
 
-exports.uploadPhotos = async (req, res) => {
+exports.uploadCoverPhoto = async (req, res) => {
   try {
     const response = await cloudinary.uploader.upload(
-      req.files.photos.tempFilePath
+      req.files.coverPhoto.tempFilePath
     );
-    req.profile.photos = response.secure_url;
+    req.profile.coverPhoto = response.secure_url;
     await req.profile.save();
     res.json(response);
   } catch (e) {

@@ -34,19 +34,12 @@ const profileSchema = new Schema({
     default: false,
     trim: true
   },
-  photos: [
-    {
-      type: String
-    }
-  ],
-  videos: [
-    {
-      type: String
-    }
-  ],
   gigsOpen: {
     type: Boolean,
     default: false
+  },
+  coverPhoto: {
+    type: String
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,

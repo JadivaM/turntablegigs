@@ -127,7 +127,7 @@ body {
   color: rgb(112, 111, 111);
 }
 
-.MuiCardContent-root {
+#user-profile-card-info {
   padding: 0;
   margin: 0;
 }
@@ -283,32 +283,10 @@ body {
   margin: auto;
   width: 70vw;
   height: 30vh;
-  z-index: -5;
   object-fit: cover;
 }
 
-/* .book-me-button {
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  padding: 15px;
-  z-index: 1;
-  display: flex;
-} */
-
-/* .user-avatar {
-  border: rgba(144, 143, 137, 0.37) 1px solid;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  margin-left: 130px;
-  margin-top: -250px;
-  z-index: 1;
-  position: relative;
-  object-fit: cover;
-} */
-
-.MuiCardMedia-root {
+.user-profile-card-image {
   width: auto;
   height: 300px;
   object-fit: cover;
@@ -339,10 +317,6 @@ body {
   width: 70vw;
   margin: auto;
 }
-
-/* .user-profile-info-card {
-  margin-top: 10%;
-} */
 
 .user-social-row {
   display: flex;
