@@ -38,6 +38,9 @@ const profileSchema = new Schema({
     type: Boolean,
     default: false
   },
+  coverPhoto: {
+    type: String
+  },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
