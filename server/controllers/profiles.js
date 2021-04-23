@@ -1,6 +1,7 @@
 const mongoose = require('mongoose'),
   Profile = require('../db/models/profile'),
-  User = require('../db/models/user');
+  User = require('../db/models/user'),
+  cloudinary = require('cloudinary').v2;
 
 exports.createProfile = async (req, res) => {
   try {
@@ -18,8 +19,6 @@ exports.createProfile = async (req, res) => {
 exports.getSpecificProfile = async (req, res) => {
   const _id = req.params.id;
   console.log(_id);
-
-  // console.log(req.user.name)
   if (!mongoose.Types.ObjectId.isValid(_id))
     return res.status(400).send('Not a valid user profile');
 
@@ -78,5 +77,18 @@ exports.deleteProfile = async (req, res) => {
     res.json({ message: 'Profile has been deleted' });
   } catch (e) {
     res.status(500).json({ error: e.toString() });
+  }
+};
+
+exports.uploadPhotos = async (req, res) => {
+  try {
+    const response = await cloudinary.uploader.upload(
+      req.files.photos.tempFilePath
+    );
+    req.profile.photos = response.secure_url;
+    await req.profile.save();
+    res.json(response);
+  } catch (e) {
+    res.json({ error: e.toString() });
   }
 };

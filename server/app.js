@@ -13,7 +13,9 @@ const express = require('express'),
   bookingRouter = require('./routes/secure/bookings'),
   chatsRouter = require('./routes/secure/chats'),
   profilesRouter = require('./routes/secure/profiles'),
-  openUsersRouter = require('./routes/open/users');
+  openUsersRouter = require('./routes/open/users'),
+  openMusicRouter = require('./routes/open/music'),
+  secureMusicRouter = require('./routes/secure/music');
 const axios = require('axios');
 
 const mapApiKey = process.env.MAP_API;
@@ -24,26 +26,6 @@ const app = express();
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(cookieParser());
-
-const getYelpAPI = async () => {
-  return axios.get(
-    'https://api.yelp.com/v3/businesses/search?location="Miami, FL"&categories="bars,breweries,musicvenues"&radius=40000',
-    {
-      headers: {
-        Authorization: `Bearer ${process.env.YELP_API_KEY}`
-      }
-    }
-  );
-};
-
-app.get('/api/yelp', async (request, response) => {
-  try {
-    const businessData = await getYelpAPI();
-    response.json(businessData.data.businesses);
-  } catch (error) {
-    console.log(error);
-  }
-});
 
 app.get('/api/map', async (request, response) => {
   try {
@@ -58,11 +40,12 @@ app.get('/api/map', async (request, response) => {
 app.use('/api/search/profiles', openProfilesRouter);
 app.use('/api/search/gigs', openPostsRouter);
 app.use('/api/users', openUsersRouter);
+app.use('/api/music', openMusicRouter);
 
 app.use(
   fileUpload({
     useTempFiles: true,
-    tempFileDir: '/tmp/images'
+    tempFileDir: '/tmp/'
   })
 );
 
@@ -77,6 +60,7 @@ app.use('/api/application', gigApplicationRouter);
 app.use('/api/user/profiles', profilesRouter);
 app.use('/api/users', userRouter);
 app.use('/api/bookings', bookingRouter);
+app.use('/api/music', secureMusicRouter);
 // app.use('/api/chats', chatsRouter);
 
 // Serve any static files

@@ -6,10 +6,16 @@ const profileSchema = new Schema({
     type: String,
     trim: true
   },
-  socialMedia: {
+  instagram: {
     type: String
   },
-  music: {
+  twitter: {
+    type: String
+  },
+  facebook: {
+    type: String
+  },
+  souncloud: {
     type: String
   },
   experience: {
@@ -28,10 +34,16 @@ const profileSchema = new Schema({
     default: false,
     trim: true
   },
-  photos: {
-    type: Boolean,
-    default: false
-  },
+  photos: [
+    {
+      type: String
+    }
+  ],
+  videos: [
+    {
+      type: String
+    }
+  ],
   gigsOpen: {
     type: Boolean,
     default: false
