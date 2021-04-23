@@ -16,9 +16,9 @@ exports.createMusic = async (req, res) => {
           songFile: result.secure_url,
           owner: req.user._id
         });
+        music.save();
       }
     );
-    await music.save();
     res.status(201).json(music);
   } catch (e) {
     res.json({ error: e.toString() });
@@ -89,7 +89,7 @@ exports.deleteMusic = async (req, res) => {
     res.status(500).json({ error: e.toString() });
   }
 };
-``;
+
 exports.uploadCoverPhoto = async (req, res) => {
   try {
     const response = await cloudinary.uploader.upload(
