@@ -3,11 +3,12 @@ const router = require('express').Router(),
     createProfile,
     deleteProfile,
     updateProfile,
-    uploadPhotos
+    uploadCoverPhoto
   } = require('../../controllers/profiles');
 
 router.post('/', createProfile);
 router.delete('/delete', deleteProfile);
 router.patch('/update', updateProfile);
-router.post('/photos', uploadPhotos);
+router.post('/upload/coverphoto', uploadCoverPhoto);
+
 module.exports = router;
