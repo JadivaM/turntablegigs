@@ -19,6 +19,9 @@ const musicSchema = new Schema({
     type: String,
     trim: true
   },
+  date: {
+    type: String
+  },
   coverPhoto: {
     type: String,
     required: true
