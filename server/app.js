@@ -15,7 +15,10 @@ const express = require('express'),
   profilesRouter = require('./routes/secure/profiles'),
   openUsersRouter = require('./routes/open/users'),
   openMusicRouter = require('./routes/open/music'),
-  secureMusicRouter = require('./routes/secure/music');
+  secureMusicRouter = require('./routes/secure/music'),
+  openMediaRouter = require('./routes/open/media'),
+  secureMediaRouter = require('./routes/open/media');
+
 const axios = require('axios');
 
 const mapApiKey = process.env.MAP_API;
@@ -41,6 +44,7 @@ app.use('/api/search/profiles', openProfilesRouter);
 app.use('/api/search/gigs', openPostsRouter);
 app.use('/api/users', openUsersRouter);
 app.use('/api/music', openMusicRouter);
+app.use('/api/media', openMediaRouter);
 
 app.use(
   fileUpload({
@@ -61,6 +65,7 @@ app.use('/api/user/profiles', profilesRouter);
 app.use('/api/users', userRouter);
 app.use('/api/bookings', bookingRouter);
 app.use('/api/music', secureMusicRouter);
+app.use('/api/media', secureMediaRouter);
 // app.use('/api/chats', chatsRouter);
 
 // Serve any static files
