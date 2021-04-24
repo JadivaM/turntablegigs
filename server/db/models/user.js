@@ -6,6 +6,8 @@ const mongoose = require('mongoose'),
   Profile = require('./profile'),
   GigPost = require('./gigPost'),
   GigApplication = require('./gigApplication'),
+  Music = require('./music'),
+  Media = require('./media'),
   Booking = require('./booking');
 
 const userSchema = new Schema(
