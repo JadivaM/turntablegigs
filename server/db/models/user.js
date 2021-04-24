@@ -113,6 +113,12 @@ userSchema.virtual('profiles', {
   foreignField: 'owner'
 });
 
+userSchema.virtual('media', {
+  ref: 'Media',
+  localField: '_id',
+  foreignField: 'owner'
+});
+
 userSchema.virtual('music', {
   ref: 'Music',
   localField: '_id',
@@ -142,6 +148,14 @@ userSchema.pre('remove', async function (next) {
 userSchema.pre('remove', async function (next) {
   const user = this;
   await Profile.deleteMany({
+    owner: user._id
+  });
+  next();
+});
+
+userSchema.pre('remove', async function (next) {
+  const user = this;
+  await Media.deleteMany({
     owner: user._id
   });
   next();
