@@ -6,6 +6,8 @@ const mongoose = require('mongoose'),
   Profile = require('./profile'),
   GigPost = require('./gigPost'),
   GigApplication = require('./gigApplication'),
+  Music = require('./music'),
+  Media = require('./media'),
   Booking = require('./booking');
 
 const userSchema = new Schema(
@@ -113,6 +115,12 @@ userSchema.virtual('profiles', {
   foreignField: 'owner'
 });
 
+userSchema.virtual('media', {
+  ref: 'Media',
+  localField: '_id',
+  foreignField: 'owner'
+});
+
 userSchema.virtual('music', {
   ref: 'Music',
   localField: '_id',
@@ -142,6 +150,14 @@ userSchema.pre('remove', async function (next) {
 userSchema.pre('remove', async function (next) {
   const user = this;
   await Profile.deleteMany({
+    owner: user._id
+  });
+  next();
+});
+
+userSchema.pre('remove', async function (next) {
+  const user = this;
+  await Media.deleteMany({
     owner: user._id
   });
   next();

@@ -5,20 +5,22 @@ const mongoose = require('mongoose'),
 
 exports.createMusic = async (req, res) => {
   try {
-    await cloudinary.uploader.upload(
+    const song = await cloudinary.uploader.upload(
       req.files.songFile.tempFilePath,
-      { resource_type: 'video' },
-      function (result) {
-        const music = new Music({
-          title: req.body.title,
-          description: req.body.description,
-          genre: req.body.genre,
-          songFile: result.secure_url,
-          owner: req.user._id
-        });
-        music.save();
-      }
+      { resource_type: 'video' }
     );
+    const image = await cloudinary.uploader.upload(
+      req.files.coverPhoto.tempFilePath
+    );
+    const music = new Music({
+      title: req.body.title,
+      description: req.body.description,
+      genre: req.body.genre,
+      songFile: song.secure_url,
+      coverPhoto: image.secure_url,
+      owner: req.user._id
+    });
+    music.save();
     res.status(201).json(music);
   } catch (e) {
     res.json({ error: e.toString() });
@@ -39,8 +41,8 @@ exports.getSpecificMusic = async (req, res) => {
     console.log('******', music);
     if (!music) return res.status(404).send('Not found');
     res.json({
-      user: user,
-      Music: music
+      user,
+      music
     });
   } catch (e) {
     res.status(500).json({ error: e.toString() });
@@ -87,18 +89,5 @@ exports.deleteMusic = async (req, res) => {
     res.json({ message: 'Music has been deleted' });
   } catch (e) {
     res.status(500).json({ error: e.toString() });
-  }
-};
-
-exports.uploadCoverPhoto = async (req, res) => {
-  try {
-    const response = await cloudinary.uploader.upload(
-      req.files.coverPhoto.tempFilePath
-    );
-    req.music.coverPhoto = response.secure_url;
-    await req.music.save();
-    res.json(response);
-  } catch (e) {
-    res.json({ error: e.toString() });
   }
 };
