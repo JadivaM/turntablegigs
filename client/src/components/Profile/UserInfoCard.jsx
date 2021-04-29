@@ -12,10 +12,14 @@ import IconButton from '@material-ui/core/IconButton';
 const UserInfoCard = (props) => {
   return (
     <div>
-      <Card className="user-profile-info-card">
+      <Card>
         <CardActionArea>
-          <CardMedia image={props.avatar} title={props.name} />
-          <CardContent>
+          <CardMedia
+            className="user-profile-card-image"
+            image={props.avatar}
+            title={props.name}
+          />
+          <CardContent id="user-profile-card-info">
             <h4 className="user-profile-card-name">{props.name}</h4>
             <p className="user-profile-card-location">{props.location}</p>
           </CardContent>
