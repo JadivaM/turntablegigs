@@ -20,6 +20,8 @@ import VenueMaps from '../components/VenueMaps';
 // import Chat from '../components/Chat';
 import UserInfoCard from '../components/Profile/UserInfoCard';
 import AboutSectionCard from '../components/Profile/AboutSectionCard';
+import MusicSection from '../components/Profile/MusicSectionCard';
+import MusicSectionCard from '../components/Profile/MusicSectionCard';
 
 const useStyles = makeStyles((theme) => ({
   input: {
@@ -152,7 +154,7 @@ const Profile = () => {
                   <Divider variant="middle" />
                 </div> */}
               </div>
-              <div className="profile-music-row">
+              {/* <div className="profile-music-row">
                 {!profile?.user?.dj ? (
                   <VenueMaps />
                 ) : (
@@ -168,7 +170,7 @@ const Profile = () => {
                     </IconButton>
                   </div>
                 )}
-              </div>
+              </div> */}
             </div>
             <div className="profile-about-column">
               <div className="profile-about-row">
@@ -194,6 +196,9 @@ const Profile = () => {
                     )}
                   </div>
                 </div> */}
+                <div>
+                  <MusicSectionCard />
+                </div>
               </div>
             </div>
           </div>
