@@ -32,17 +32,18 @@ exports.getSpecificMusic = async (req, res) => {
   console.log(_id);
 
   if (!mongoose.Types.ObjectId.isValid(_id))
-    return res.status(400).send('Not a valid song');
+    return res.status(400).send('Not a valid');
 
   try {
-    const user = await User.findOne({ _id: req.params.id });
+    const user = await User.findOne({ _id });
     console.log(user);
-    const Music = await Music.findOne({ owner: user._id });
+    const music = await Music.find({ owner: user._id });
     console.log('******', music);
+
     if (!music) return res.status(404).send('Not found');
     res.json({
-      user,
-      music
+      user: user,
+      music: music
     });
   } catch (e) {
     res.status(500).json({ error: e.toString() });

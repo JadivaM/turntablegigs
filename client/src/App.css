@@ -127,7 +127,8 @@ body {
   color: rgb(112, 111, 111);
 }
 
-#user-profile-card-info {
+#user-profile-card-info,
+#music-card-information {
   padding: 0;
   margin: 0;
 }
@@ -287,7 +288,7 @@ body {
 }
 
 .user-profile-card-image {
-  width: auto;
+  width: 100%;
   height: 300px;
   object-fit: cover;
   background-position: 50% 50%;
@@ -351,6 +352,18 @@ body {
 
 .profile-info-column {
   margin: 0 3% 0 0;
+  width: 40%;
+}
+
+#music-card-information {
+  text-align: center;
+  background-color: transparent;
+}
+
+.user-music-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .edit-icon {
@@ -365,6 +378,54 @@ body {
   position: relative;
 }
 
+.music-card-media {
+  width: 100%;
+  height: 100px;
+}
+
+.music-card-song-genre {
+  font-size: 12px;
+  color: rgb(87, 86, 86);
+}
+
+/* .music-card-information {
+    width: 200px;
+    height: 200px;
+} */
+
+.user-music-card {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 5%;
+}
+
+.music-player-control-buttons {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: fit-content;
+  height: auto;
+}
+
+.button-music-card {
+  visibility: hidden;
+  border: none;
+  color: rgba(0, 0, 0, 0.856);
+  cursor: pointer;
+}
+
+.music-player-control-buttons:hover > .button-music-card {
+  background-color: transparent;
+  visibility: visible;
+  z-index: 10;
+  background-color: rgba(194, 193, 193, 0.575);
+  border-radius: 25%;
+}
+
+.music-button {
+  font-size: 5rem;
+}
 /* .user-profile-about-card {
   margin-top: 5%;
 } */
